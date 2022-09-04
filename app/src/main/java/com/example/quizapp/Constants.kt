@@ -109,7 +109,7 @@ object Constants {
             10, "What country does this flag belong to?",
             R.drawable.ic_flag_of_sri_lanka,
             "Kuwait", "Jordan",
-            "Sudan", "Sri Lanka", 1
+            "Sudan", "Sri Lanka", 4
         )
 
         questionsList.add(que11)

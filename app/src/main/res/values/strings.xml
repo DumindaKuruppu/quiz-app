@@ -4,4 +4,7 @@
     <string name="welcome">Welcome</string>
     <string name="e_g_duminda">e.g. Duminda</string>
     <string name="start">START</string>
+    <string name="flag_image">Flag Image</string>
+    <string name="submit">SUBMIT</string>
+    <string name="finish">FINISH</string>
 </resources>
