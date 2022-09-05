@@ -7,4 +7,5 @@
     <string name="flag_image">Flag Image</string>
     <string name="submit">SUBMIT</string>
     <string name="finish">FINISH</string>
+    <string name="next_question">NEXT QUESTION</string>
 </resources>

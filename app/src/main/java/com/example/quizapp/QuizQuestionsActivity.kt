@@ -6,10 +6,7 @@ import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.ProgressBar
-import android.widget.TextView
+import android.widget.*
 import androidx.core.content.ContextCompat
 
 class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
@@ -60,7 +57,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun setQuestion() {
-
+        defaultOptionsView()
         val question: Question = mQuestionsList!![mCurrentPosition - 1]
         flagImage?.setImageResource(question.image)
         progressBar?.progress = mCurrentPosition
@@ -138,7 +135,49 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             R.id.buttonSubmit -> {
-//                TODO
+                if (mSelectedOptionPosition == 0) {
+                    mCurrentPosition++
+
+                    when {
+                        mCurrentPosition <= mQuestionsList!!.size -> {
+                            setQuestion()
+                        }
+                        else -> {
+                            Toast.makeText(this, "CONGRATULATIONS !!!", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                } else {
+                    val question = mQuestionsList?.get(mCurrentPosition - 1)
+                    if (question!!.correctAnswer != mSelectedOptionPosition) {
+                        answerView(mSelectedOptionPosition, R.drawable.wrong_option_border)
+                    }
+                    answerView(question.correctAnswer, R.drawable.correct_option_border)
+
+                    if (mCurrentPosition == mQuestionsList!!.size) {
+                        buttonSubmit?.text = getString(R.string.finish)
+                    } else {
+                        buttonSubmit?.text = getString(R.string.next_question)
+                    }
+
+                    mSelectedOptionPosition = 0
+                }
+            }
+        }
+    }
+
+    private fun answerView(answer: Int, drawableView: Int) {
+        when (answer) {
+            1 -> {
+                textViewOptionOne?.background = ContextCompat.getDrawable(this, drawableView)
+            }
+            2 -> {
+                textViewOptionTwo?.background = ContextCompat.getDrawable(this, drawableView)
+            }
+            3 -> {
+                textViewOptionThree?.background = ContextCompat.getDrawable(this, drawableView)
+            }
+            4 -> {
+                textViewOptionFour?.background = ContextCompat.getDrawable(this, drawableView)
             }
         }
     }
