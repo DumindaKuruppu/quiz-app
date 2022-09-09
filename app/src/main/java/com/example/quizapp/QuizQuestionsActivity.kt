@@ -1,7 +1,6 @@
 package com.example.quizapp
 
 import android.graphics.Color
-import android.graphics.Color.red
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
