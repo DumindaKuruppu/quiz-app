@@ -8,4 +8,7 @@
     <string name="submit">SUBMIT</string>
     <string name="finish">FINISH</string>
     <string name="next_question">NEXT QUESTION</string>
+    <string name="result">Result</string>
+    <string name="image">Image</string>
+    <string name="congratulations">Hey, Congratulations !</string>
 </resources>
